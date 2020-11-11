@@ -1,11 +1,13 @@
 from time import sleep
 
 import telebot
+import sys
 from bs4 import BeautifulSoup
 
 import requests
 
-bot = telebot.TeleBot("1480349296:AAE-wX8l9Oq4DqEBTdN6DyQAgjJOllteuVA")
+token = sys.argv[1]
+bot = telebot.TeleBot(token)
 page_link ='https://www.technopark.ru/smartfon-apple-iphone-12-pro-128-gb-serebristyy/'
 
 s = requests.Session()
@@ -13,6 +15,8 @@ s.headers = {
     'X-Requested-With': 'XMLHttpRequest',
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:70.0) Gecko/20100101 Firefox/70.0'
 }
+
+bot.send_message('136060244', 'Привет! Я перезагрузился.')
 
 
 def get_status():
