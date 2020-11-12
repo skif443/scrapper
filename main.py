@@ -21,6 +21,9 @@ bot.send_message('136060244', 'Привет! Я перезагрузился.')
 
 def get_status():
     page_response = s.get(page_link, timeout=5)
+    if page_response.status_code != 200:
+        bot.send_message('136060244', 'Не смог получить данные с сайта :(')
+        return 0
     soup = BeautifulSoup(page_response.text, 'html.parser')
 
     b = soup.find_all('section')
