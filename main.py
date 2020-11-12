@@ -33,12 +33,13 @@ def get_status():
     else:
         return 1
 
-while(True):
+
+while True:
     status = get_status()
-    if (status != 0):
-        for i in range(30):
+    if status != 0:
+        for i in range(5):
             bot.send_message('136060244', 'Айфон появился!!!')
-            sleep(5)
+            sleep(10)
     else:
         print("iPhone is in Pre-order state. Waiting for 300 seconds... ")
     sleep(300)
