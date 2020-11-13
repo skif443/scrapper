@@ -40,9 +40,8 @@ def get_status():
 while True:
     status = get_status()
     if status != 0:
-        for i in range(5):
-            bot.send_message('136060244', 'Айфон появился!!!')
-            sleep(10)
+        bot.send_message('136060244', 'iPhone 12 Pro 128GB в наличии!')
+        sleep(10000)
     else:
         print("iPhone is in Pre-order state. Waiting for 300 seconds... ")
     sleep(300)
